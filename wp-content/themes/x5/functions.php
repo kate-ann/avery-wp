@@ -153,6 +153,7 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_sub_page( 'General' );
 	acf_add_options_sub_page( 'Header' );
 	acf_add_options_sub_page( 'Footer' );
+	acf_add_options_sub_page( '404 page' );
 }
 
 
@@ -238,6 +239,25 @@ function x5_add_customized_css() {
 			endif;
 		endif;
 		// Home page
+
+		// 404 page
+		if ( is_404() &&
+				 get_field( 'x5_404_bg', 'option' ) ):
+			$x5_404_bg = get_field( 'x5_404_bg', 'option' ); 
+		?>
+			.page-404 {
+			  background: transparent url("<?php echo esc_url( $x5_404_bg['url'] ); ?>") center center no-repeat;
+			  background-size: cover;
+			}
+			@media screen and (min-width: 768px) {
+			  .page-404 {
+			    background: transparent url("<?php echo esc_url( $x5_404_bg['url'] ); ?>") center center no-repeat;
+			    background-size: cover;
+			  }
+			}
+		<?php			
+		endif;
+		// 404 page
 
 	?>
 			

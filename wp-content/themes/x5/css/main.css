@@ -390,15 +390,15 @@ a:focus {
 .header {
   float: left;
   width: 100%;
-}
 
-h1 {
-  z-index: 9999;
-  position: relative;
-  float: left;
-  left: 23px;
-  margin-top: 72px;
-  margin-top: 5.538rem;
+    h1 {
+    z-index: 9999;
+    position: relative;
+    float: left;
+    left: 23px;
+    margin-top: 72px;
+    margin-top: 5.538rem;
+  }
 }
 
 .site-name {
@@ -407,9 +407,12 @@ h1 {
   text-indent: -9999em;
 }
 
+
 @media screen and (min-width: 980px) {
-  h1 {
-    left: 49px;
+  .header {
+    h1 {
+      left: 49px;
+    }
   }
 }
 
@@ -3084,11 +3087,6 @@ img.rsImg {
 
 /* 404 page
 ------------------------------------------------------------------------------*/
-.page-404 {
-  background: transparent url("../img/404/bg_404.jpg") center center no-repeat;
-  background-size: cover;
-}
-
 .page-404 .content {
   position: absolute;
   top: 50%;
@@ -3152,10 +3150,6 @@ img.rsImg {
 }
 
 @media screen and (min-width: 768px) {
-  .page-404 {
-    background: transparent url("../img/404/bg_404.jpg") center center no-repeat;
-    background-size: cover;
-  }
 
   .page-404 .content h1 {
     margin-bottom: 1.1875rem;
@@ -3180,7 +3174,6 @@ img.rsImg {
     font-size: 1.75rem;
     line-height: 1.1785714286em;
   }
-
 }
 
 /* Contact page

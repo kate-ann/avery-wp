@@ -6,6 +6,8 @@
  * @subpackage X5
  */
 get_header();
+get_template_part( 'partials/header', 'content' );
+
 ?>
 
 	<?php	while ( have_posts() ) : the_post(); ?>

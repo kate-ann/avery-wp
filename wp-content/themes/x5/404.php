@@ -11,21 +11,34 @@
 get_header();
 ?>
 
-<?php get_search_form(); ?>
+<?php if ( get_field( 'x5_404_heading', 'option' ) ||
+					 get_field( 'x5_404_desc', 'option' ) ||
+					 get_field( 'x5_404_btnl', 'option' ) ||
+					 get_field( 'x5_404_bg', 'option' ) ): ?>
+	
+	<div class="content" id="content">
 
-<div class="not-found">
-  <p>Perhaps checking one of these categories might help?</p>
-	<ul>
-		<?php wp_list_categories( 
-			array(
-				'orderby' => 'count',
-				'order' => 'DESC',
-				'show_count' => 1,
-				'title_li' => '',
-				'number' => 10
-			) 
-		); ?>
-	</ul>
-</div>
+	  <div class="container">
+	  	<?php if ( get_field( 'x5_404_heading', 'option' ) ): ?>
+	  		<h1><?php echo esc_html( get_field( 'x5_404_heading', 'option' ) ); ?></h1>
+	  	<?php endif; ?>
+	    
+	    <?php if ( get_field( 'x5_404_desc', 'option' ) ): ?>
+	    	<p><?php echo esc_html( get_field( 'x5_404_desc', 'option' ) ); ?></p>
+	    <?php endif; ?>
+	    
+	    <?php if ( get_field( 'x5_404_btnl', 'option' ) ):
+	    	$x5_404_btnl = get_field ( 'x5_404_btnl', 'option' ); ?>
+	    	
+	    	<a href="<?php echo esc_url( $x5_404_btnl['url'] ); ?>" class="btn-action"><?php echo esc_html( $x5_404_btnl['title'] ); ?></a>
+	    	
+	    <?php endif; ?>
+	    
+	  </div>
+
+	</div>
+	<!-- / content -->
+
+<?php endif; ?>
 
 <?php get_footer();

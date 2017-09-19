@@ -8,6 +8,8 @@
  * @subpackage X5
  */
 get_header();
+get_template_part( 'partials/header', 'content' );
+
 ?>
 
 Index page
