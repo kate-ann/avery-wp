@@ -42,7 +42,7 @@
     
     if ( is_page_template( 'page-contact.php' ) ){
       // load gravity forms scripts
-      gravity_form_enqueue_scripts( 1, true );
+      //gravity_form_enqueue_scripts( 1, true );
     }
     
     // do not remove
@@ -59,7 +59,7 @@
       body_class( 'page-contact' );
     } elseif ( is_404() ){
       body_class( 'page-404' );
-    } elseif ( is_blog() ) {
+    } elseif ( is_page_template( 'page-blog.php' ) ) {
       body_class( 'page-blog' );
     }
   ?>>

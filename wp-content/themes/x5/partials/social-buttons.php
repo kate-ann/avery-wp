@@ -12,7 +12,7 @@
 
 <?php if ( have_rows( 'x5_general_social_btns', 'option' ) ) : ?>
 			
-	<ul class="c-social-btns">
+	<ul class="social">
 	
 		<?php while( have_rows( 'x5_general_social_btns', 'option' ) ) : the_row(); ?>
 		
@@ -50,7 +50,7 @@
 					?>
 					
 					<a href="<?php echo esc_attr( get_sub_field ( 'x5_general_social_btns_link', 'option' ) ); ?>" class="<?php echo esc_attr( $social_btn_class ); ?>">
-            <span class="u-hidden-visually"><?php echo esc_html( get_sub_field( 'x5_general_social_btns_text' ) ); ?></span>
+            <span class="screen-reader-text"><?php echo esc_html( get_sub_field( 'x5_general_social_btns_text' ) ); ?></span>
           </a>
 				
 				<?php endif; ?>

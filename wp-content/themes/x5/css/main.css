@@ -186,11 +186,11 @@ input[type=submit]::-moz-focus-inner {
   content: '\e804';
 }
 
-.icon-facebook:before {
+.icon-fb:before {
   content: '\e805';
 }
 
-.icon-twitter:before {
+.icon-tw:before {
   content: '\e806';
 }
 
@@ -1670,21 +1670,24 @@ img.rsImg {
 
 .page-home .about-book .link-more {
   display: inline-block;
-  border-bottom: 2px solid #d7d4ce;
+  margin-top: 14px;
+  border-bottom: 2px solid #f07c29;
   font-family: 'TrocchiRegular', Times New Roman, Times, Baskerville, Georgia, serif;
-  font-size: 10px;
+  font-size: 12px;
   font-size: 0.625rem;
+  font-weight: 700;
   line-height: 1.8em;
+  letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-  color: #b2b2b2;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  color: #f07c29;
 }
 
 .page-home .about-book .link-more:hover {
-  border-color: #f07c29;
-  color: #f07c29;
+  border-color: #222;
+  color: #222;
 }
 
 @media screen and (min-width: 1120px) {
@@ -1819,6 +1822,7 @@ img.rsImg {
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
   background: #e5e5e5;
+  text-decoration: none;
   color: #989898;
 }
 

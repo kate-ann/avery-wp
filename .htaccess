@@ -1,1 +1,12 @@
 ErrorDocument 404 /workspace/_2017/avery-wp/index.php?error=404
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /workspace/_2017/avery-wp/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /workspace/_2017/avery-wp/index.php [L]
+</IfModule>
+
+# END WordPress

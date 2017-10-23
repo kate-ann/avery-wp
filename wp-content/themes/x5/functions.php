@@ -55,43 +55,29 @@ function x5_register_menus() {
 add_action( 'init', 'x5_register_menus' );
 
 
-/*
-* Add default sidebars
-*/	
-function x5_register_sidebars() {
-		
-	register_sidebar(
-			array(
-				'id'            => 'primary',
-				'name'          => __( 'Primary Sidebar', 'x5' ),
-				'description'   => __( 'Main content sidebar.', 'x5' ),
-				'before_widget' => '<div id="%1$s" class="widget %2$s">',
-				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="widget-title">',
-				'after_title'   => '</h3>',
-			)
-	);
-	/* Repeat register_sidebar() code for additional sidebars. */
-}
-add_action( 'widgets_init', 'x5_register_sidebars' );
-
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 1210;
 }
 
+
 /*
  * Add post thumbnails and set its size
  */
 add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 1226, 400 );
+set_post_thumbnail_size( 525, 340 );
 
 /*
- * Set new image sizes
+ * Add new image sizes
  */
-add_image_size( 'home-about-intro-thumb', 524, 295, false );
-add_image_size( 'home-about-summary-thumb', 370, 209, false );
+add_image_size( 'home_story_about', 524, 295, true );
+add_image_size( 'home_story_overview', 370, 209, true );
 
+add_image_size( 'home_author_pic', 345, 520, true );
+
+add_image_size( 'home_book_thumbnail', 124, 177, true );
+
+add_image_size( 'post_author_thumbnail', 100, 100, true );
 
 /* 
  * Load optimization
@@ -222,6 +208,7 @@ function x5_add_customized_css() {
 			
 				.page-home .intro {
 				  background: transparent url("<?php echo esc_url( $x5_home_featured_bg['url'] ); ?>") center 0 no-repeat;
+				  background-size: cover;
 				}
 
 				<?php

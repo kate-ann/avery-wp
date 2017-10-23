@@ -96,11 +96,14 @@ get_template_part( 'partials/header', 'content' );
 		         	
 		        </div>
 		        <!-- info -->
-
-		        <?php if ( get_field( 'x5_home_about_book_intro_bg' ) ):
-		        	$x5_home_about_book_intro_bg = get_field ( 'x5_home_about_book_intro_bg' ); ?>
-		        	<img src="<?php echo esc_url( $x5_home_about_book_intro_bg['url'] ); ?>" alt="<?php echo esc_attr( $x5_home_about_book_intro_bg['alt'] ); ?>" />
-		        <?php endif; ?>
+						
+						<?php if ( get_field( 'x5_home_about_book_intro_bg' ) ):
+							$x5_home_about_book_intro_bg = get_field( 'x5_home_about_book_intro_bg' ); 
+							$x5_home_about_book_intro_bg_size = wp_get_attachment_image_url( $x5_home_about_book_intro_bg['ID'], 'home_story_about' ); ?>
+							
+							<img src="<?php echo esc_url( $x5_home_about_book_intro_bg_size ); ?>" alt="<?php echo esc_attr( $x5_home_about_book_intro_bg['alt'] ); ?>" />
+							
+						<?php endif; ?>
 		        
 		      </div>
 		      <!-- / section -->
@@ -127,10 +130,13 @@ get_template_part( 'partials/header', 'content' );
 		        <!-- info -->
 		        
 		        <?php if ( get_field( 'x5_home_about_book_summary_bg' ) ):
-		        	$x5_home_about_book_summary_bg = get_field ( 'x5_home_about_book_summary_bg' ); ?>
-		        	<img src="<?php echo esc_url( $x5_home_about_book_summary_bg['url'] ); ?>" alt="<?php echo esc_attr( $x5_home_about_book_summary_bg['alt'] ); ?>" />
+		        	$x5_home_about_book_summary_bg = get_field( 'x5_home_about_book_summary_bg' ); 
+		        	$x5_home_about_book_summary_bg_size = wp_get_attachment_image_url( $x5_home_about_book_summary_bg['ID'], 'home_story_overview' ); ?>
+		        	
+		        	<img src="<?php echo esc_url( $x5_home_about_book_summary_bg_size ); ?>" alt="<?php echo esc_attr( $x5_home_about_book_summary_bg['alt'] ); ?>" />
+		        	
 		        <?php endif; ?>
- 
+		       
 		      </div>
 		      <!-- / section -->
 
@@ -198,71 +204,131 @@ get_template_part( 'partials/header', 'content' );
     <!-- / countdown -->
 
 	<?php endif; ?>
-	<section class="about-author">
 
-    <div class="container">
+	<?php if ( get_field( 'x5_home_about_author_heading' ) ||
+						 get_field( 'x5_home_about_author_top_heading' ) ||
+						 get_field( 'x5_home_about_author_subtitle' ) ||
+						 get_field( 'x5_home_about_author_desc' ) ||
+						 get_field( 'x5_home_about_author_social_is' ) ||
+						 get_field( 'x5_home_about_author_rows' ) ): ?>
+					
+		<section class="about-author">
 
-      <div class="info">
-        <h3>Author</h3>
-        <h4>Alex Avery</h4>
-        <p class="style">Style: nature living, organic foods</p>
-        <p class="descr">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociisnatoque penatibus et magnis...</p>
-        <ul class="social">
-          <li>
-            <a href="#">
-              <i class="icon-facebook"></i>
-              <span class="screen-reader-text">Like Alex on Facebook</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="icon-twitter"></i>
-              <span class="screen-reader-text">Read on Twitter</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="icon-rss"></i>
-              <span class="screen-reader-text">Read latest RSS news</span>
-            </a>
-          </li>
-        </ul>
-        <!-- / social -->
-      </div>
-      <!-- / info -->
+	    <div class="container">
+					
+	      <div class="info">
 
-      <img class="author-pic" src="media/home/pic_home_03.jpg" alt="" />
+	      	<?php if ( get_field( 'x5_home_about_author_top_heading' ) ): ?>
+	      		<h3><?php echo esc_html( get_field( 'x5_home_about_author_top_heading' ) ); ?></h3>
+	      	<?php endif; ?>
+	       	
+	       	<?php if ( get_field( 'x5_home_about_author_heading' ) ): ?>
+	       		<h4><?php echo esc_html( get_field( 'x5_home_about_author_heading' ) ); ?></h4>
+	       	<?php endif; ?>
+	      
+	      	<?php if ( get_field( 'x5_home_about_author_subtitle' ) ): ?>
+	      		<p class="style"><?php echo esc_html( get_field( 'x5_home_about_author_subtitle' ) ); ?></p>
+	      	<?php endif; ?>
+	        
+	        <?php if ( get_field( 'x5_home_about_author_desc' ) ): ?>
+	        	<div class="descr"><?php echo wp_kses_post( force_balance_tags( get_field( 'x5_home_about_author_desc' ) ) ); ?></div>
+	        <?php endif; ?>
+	        
+	        <?php if ( get_field( 'x5_home_about_author_social_is' ) ): ?>
+	        	<?php get_template_part( 'partials/social', 'buttons' ); ?>
+	        <?php endif; ?>
+	        
+	      </div>
+	      <!-- / info -->
+				
+				<?php if ( get_field( 'x5_home_about_author_bg' ) ):
+					$x5_home_about_author_bg = get_field( 'x5_home_about_author_bg' ); 
+				
+					$x5_home_about_author_bg_size = wp_get_attachment_image_url( $x5_home_about_author_bg['ID'], 'home_author_pic'); ?>
+					
+					<img class="author-pic" src="<?php echo esc_url( $x5_home_about_author_bg_size ); ?>" alt="<?php echo esc_attr( $x5_home_about_author_bg['alt'] ); ?>" />
+					
+				<?php endif; ?>
 
-      <ul class="other-books">
-        <li>
-          <a href="story.html"><img src="media/home/pic_home_04.png" alt="Healthy eating on a budget" />
-            <p class="title">Healthy eating on a budget</p>
-          </a>
-        </li>
-        <li>
-          <a href="story.html"><img src="media/home/pic_home_05.png" alt="Herbs in every day life" />
-            <p class="title">Herbs in every day life</p>
-          </a>
-        </li>
-        <li>
-          <a href="story.html"><img src="media/home/pic_home_06.png" alt="All about Spices" />
-            <p class="title">All about Spices</p>
-          </a>
-        </li>
-        <li>
-          <a href="story.html"><img src="media/home/pic_home_07.png" alt="Japanese cuisine" />
-            <p class="title">Japanese cuisine</p>
-          </a>
-        </li>
-      </ul>
-      <!-- / other-books -->
+	      <?php if ( have_rows( 'x5_home_about_author_rows' ) ): ?>
+	      
+	      	<ul class="other-books">
+	      
+	      		<?php while( have_rows( 'x5_home_about_author_rows' ) ) : the_row(); ?>
+	      			
+	      			<?php if ( get_sub_field( 'x5_home_about_author_rows_bg' ) &&
+	      								 get_sub_field( 'x5_home_about_author_rows_heading' ) &&
+	      								 get_sub_field( 'x5_home_about_author_rows_btnl' ) ):
+	      				$x5_home_about_author_rows_bg = get_sub_field( 'x5_home_about_author_rows_bg' );
+	      				$x5_home_about_author_rows_btnl = get_sub_field( 'x5_home_about_author_rows_btnl' ); ?>
+	      				
+	      				<li>
+				          <a href="<?php echo esc_url( $x5_home_about_author_rows_btnl['url'] ); ?>"><img src="<?php echo esc_url( $x5_home_about_author_rows_bg['url'] ); ?>" alt="<?php echo esc_attr( $x5_home_about_author_rows_bg['alt'] ); ?>" />
+				            <p class="title"><?php echo esc_html( get_sub_field( 'x5_home_about_author_rows_heading' ) ); ?></p>
+				          </a>
+				        </li>
 
-    </div>
-    <!-- / container -->
+	      			<?php endif; ?>
+	      
+	      		<?php endwhile; ?>
+	      
+	      	</ul>
+	      	<!-- / other-books -->
+	      
+	      <?php endif; ?>
+				
+	      
 
-  </section>
-  <!-- / about-author -->
+	     
+
+	    </div>
+	    <!-- / container -->
+
+	  </section>
+	  <!-- / about-author -->
+
+	<?php endif; ?>
+
+	<?php if ( have_rows( 'x5_home_testimonials_rows' ) ): ?>
 	
+		<div class="testimonials">
+
+			<div id="testimonials" class="royalSlider heroSlider rsMinW rsDefault">
+	
+				<?php while( have_rows( 'x5_home_testimonials_rows' ) ) : the_row(); ?>
+					
+					<?php if ( get_sub_field( 'x5_home_testimonials_rows_desc' ) ||
+										 get_sub_field( 'x5_home_testimonials_rows_name' ) ||
+										 get_sub_field( 'x5_home_testimonials_rows_book' ) ): ?>
+						
+						<div class="testimonial">
+							<?php if ( get_sub_field( 'x5_home_testimonials_rows_desc' ) ): ?>
+								<blockquote><?php echo wp_kses_post( force_balance_tags( get_sub_field( 'x5_home_testimonials_rows_desc' ) ) ); ?></blockquote>
+							<?php endif; ?>
+		  				
+		  				<cite>
+		  					<?php if ( get_sub_field( 'x5_home_testimonials_rows_name' ) ): ?>
+		  						<span class="source"><?php echo esc_html( get_sub_field( 'x5_home_testimonials_rows_name' ) ); ?></span> //
+		  					<?php endif; ?>
+		  					
+		  					<?php if ( get_sub_field( 'x5_home_testimonials_rows_book' ) ): ?>
+		  						<span class="book"><?php echo esc_html( get_sub_field( 'x5_home_testimonials_rows_book' ) ); ?></span>
+		  					<?php endif; ?>
+		  				</cite>
+		  			</div>
+		  			<!-- / testimonial -->
+
+					<?php endif; ?>
+					
+				<?php endwhile; ?>
+			
+			</div>
+  		<!-- royalSlider-->
+
+		</div>
+    <!-- / testimonials -->
+	
+	<?php endif; ?>  
 
 </div>
 <!-- content -->
