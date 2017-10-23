@@ -172,24 +172,10 @@ get_template_part( 'partials/header', 'content' );
         	<div id="timer" class="timer"></div>
         <?php endif; ?>
 
-        <?php if ( get_field( 'x5_home_countdown_form_is' ) ): ?>
+        <?php if ( get_field( 'x5_home_countdown_form_is' ) &&
+        					 get_field( 'x5_home_subscribe_form_html' ) ): ?>
         	
-        	<!-- Begin MailChimp Signup Form -->
-					<div id="mc_embed_signup">
-						
-						<form action="//stardevelopment.us16.list-manage.com/subscribe/post?u=a2d7b6de7eaa22cbcd2623cc3&amp;id=7bb9d50cf4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="subscribe-form validate" target="_blank" novalidate>
-					  
-							<label for="email-txt" class="hide">Email address</label>
-							<input id="email-txt" type="email" class="email-txt" value="" name="EMAIL" class="email-txt" id="mce-EMAIL" placeholder="Email address" required>
-				    
-				    	<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-				    	<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a2d7b6de7eaa22cbcd2623cc3_7bb9d50cf4" tabindex="-1" value=""></div>
-
-				    	<input class="subscribe-submit-btn" type="submit" value="GO" name="subscribe" id="mc-embedded-subscribe">
-					    
-						</form>
-					</div>
-					<!--End mc_embed_signup-->
+        	<div><?php echo get_field( 'x5_home_subscribe_form_html' ); ?></div>
 
         <?php endif; ?>        
 				
@@ -328,6 +314,26 @@ get_template_part( 'partials/header', 'content' );
 		</div>
     <!-- / testimonials -->
 	
+	<?php endif; ?>
+
+	<?php if ( get_field( 'x5_home_subscribe_heading' ) ||
+						 get_field( 'x5_home_subscribe_form_is' ) ||
+						 get_field( 'x5_home_subscribe_form_html' ) ): ?>
+	  
+	  <section class="subscribe">
+    	
+    	<?php if ( get_field( 'x5_home_subscribe_heading' ) ): ?>
+    		<h4><?php echo esc_html( get_field( 'x5_home_subscribe_heading' ) ); ?></h4>
+    	<?php endif; ?>
+    	
+    	<?php if ( get_field( 'x5_home_subscribe_form_is' ) &&
+    						 get_field( 'x5_home_subscribe_form_html' ) ): ?>
+    		<?php echo get_field( 'x5_home_subscribe_form_html' ); ?>
+    	<?php endif; ?>
+    	
+    </section>
+    <!-- / subscribe -->
+
 	<?php endif; ?>  
 
 </div>
