@@ -132,12 +132,11 @@ add_action( 'wp_enqueue_scripts', 'x5_add_scripts' );
 /*
  * Add ACF Options pages
  */
-if( function_exists('acf_add_options_page') ) {
+if( function_exists( 'acf_add_options_page' ) ) {
 	
 	acf_add_options_page();
 	
 	acf_add_options_sub_page( 'General' );
-	acf_add_options_sub_page( 'Header' );
 	acf_add_options_sub_page( 'Footer' );
 	acf_add_options_sub_page( '404 page' );
 }

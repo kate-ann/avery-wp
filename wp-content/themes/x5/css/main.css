@@ -475,6 +475,7 @@ a:focus {
   font-size: 14px;
   font-size: 0.875rem;
   line-height: 1.5714285714em;
+  -moz-transition: all 0.2s ease;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   background: #fff;
@@ -643,8 +644,9 @@ a:focus {
   line-height: 1.9166666667em;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   outline: none;
   background: #fff;
   color: #f07c29;
@@ -730,8 +732,9 @@ a:focus {
   line-height: 1.7142857143em;
   text-transform: uppercase;
   background: none;
-  -webkit-transition: color 0.1s ease;
-  transition: color 0.1s ease;
+  -moz-transition: color 0.2s ease;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
   color: rgba(255, 255, 255, 0.4);
 }
 
@@ -949,8 +952,10 @@ blockquote:before {
   font-size: 1.125rem;
   line-height: 1.5555555556em;
   text-align: center;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-decoration: none;
   color: #7c7c79;
 }
 
@@ -1075,17 +1080,15 @@ blockquote:before {
 .rsNav,
 .rsThumbsArrow {
   opacity: 1;
-  -webkit-transition: opacity 0.3s linear;
-  transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
 }
 
 .rsHidden {
   opacity: 0;
   visibility: hidden;
-  /*-webkit-transition:visibility 0s linear 0.3s,opacity 0.3s linear;
-	-moz-transition:visibility 0s linear 0.3s,opacity 0.3s linear;
-	-o-transition:visibility 0s linear 0.3s,opacity 0.3s linear;
-	transition:visibility 0s linear 0.3s,opacity 0.3s linear;*/
+  -moz-transition: visibility 0s linear, opacity 0.3s linear;
   -webkit-transition: visibility 0s linear, opacity 0.3s linear;
   transition: visibility 0s linear, opacity 0.3s linear;
 }
@@ -1112,8 +1115,6 @@ blockquote:before {
 
 .royalSlider .rsSlide.rsFakePreloader {
   opacity: 1 !important;
-  -webkit-transition: all 0 linear;
-  transition: all 0 linear;
   display: none;
 }
 
@@ -1295,6 +1296,7 @@ img.rsImg {
   border-radius: 50%;
   border: 2px solid #777672;
   background: transparent;
+  -moz-transition: background 0.2s ease;
   -webkit-transition: background 0.1s ease;
   transition: background 0.1s ease;
 }
@@ -1436,8 +1438,9 @@ img.rsImg {
   line-height: 2.0833333333em;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   color: #fff;
 }
 
@@ -1680,6 +1683,7 @@ img.rsImg {
   letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
+  -moz-transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   color: #f07c29;
@@ -1819,8 +1823,9 @@ img.rsImg {
   border-radius: 50%;
   line-height: 1.7692307692em;
   text-align: center;
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   background: #e5e5e5;
   text-decoration: none;
   color: #989898;
@@ -1880,8 +1885,9 @@ img.rsImg {
   font-size: 0.8125rem;
   line-height: 1.6923076923em;
   text-transform: capitalize;
-  -webkit-transition: color 0.1s ease;
-  transition: color 0.1s ease;
+  -moz-transition: color 0.2s ease;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
   color: #4e4e4e;
 }
 
@@ -2185,8 +2191,9 @@ img.rsImg {
 
 .page-blog .entry .entry-meta a {
   text-decoration: none;
-  -webkit-transition: color 0.1s ease;
-  transition: color 0.1s ease;
+  -moz-transition: color 0.2s ease;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
   color: #bbb;
 }
 
@@ -2268,8 +2275,9 @@ img.rsImg {
   line-height: 1.6428571429em;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: color 0.1s ease;
-  transition: color 0.1s ease;
+  -moz-transition: color 0.2s ease;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
   color: #7f7f7f;
 }
 
@@ -2321,6 +2329,7 @@ img.rsImg {
   height: 30px;
   margin: 0 3px;
   text-decoration: none;
+  -moz-transition: all 0.0.5s ease;
   -webkit-transition: all 0.05s ease;
   transition: all 0.05s ease;
   border: 2px solid transparent;
@@ -2563,8 +2572,9 @@ img.rsImg {
 
 .single .hentry .entry-meta a {
   text-decoration: none;
-  -webkit-transition: color 0.1s ease;
-  transition: color 0.1s ease;
+  -moz-transition: color 0.2s ease;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
   color: #bbb;
 }
 
@@ -2633,8 +2643,9 @@ img.rsImg {
 
   .single .hentry .entry-meta a {
     text-decoration: none;
-    -webkit-transition: color 0.1s ease;
-    transition: color 0.1s ease;
+    -moz-transition: color 0.2s ease;
+    -webkit-transition: color 0.2s ease;
+    transition: color 0.2s ease;
     color: #bbb;
   }
 
@@ -2766,8 +2777,9 @@ img.rsImg {
   font-size: 17px;
   font-size: 1.0625rem;
   line-height: 1.2941176471em;
-  -webkit-transition: color 0.1s ease;
-  transition: color 0.1s ease;
+  -moz-transition: color 0.2s ease;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
   text-decoration: none;
   color: #000;
 }
@@ -2793,6 +2805,7 @@ img.rsImg {
   font-size: 0.6875rem;
   line-height: 1.8181818182em;
   text-decoration: none;
+  -moz-transition: color 0.2s ease;
   -webkit-transition: color 0.1s ease;
   transition: color 0.1s ease;
 }
@@ -2930,8 +2943,9 @@ img.rsImg {
 .single .post-comments a.reply {
   float: right;
   text-decoration: none;
-  -webkit-transition: color 0.1s ease;
-  transition: color 0.1s ease;
+  -moz-transition: color 0.2s ease;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .single .post-comments a.reply:hover {
@@ -3003,8 +3017,9 @@ img.rsImg {
 
 .single .recent-posts .post .post-title a {
   text-decoration: none;
-  -webkit-transition: color 0.1s ease;
-  transition: color 0.1s ease;
+  -moz-transition: color 0.2s ease;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
   color: #262626;
 }
 
@@ -3022,6 +3037,7 @@ img.rsImg {
 
 .single .recent-posts .post .post-meta .date {
   text-decoration: none;
+  -moz-transition: color 0.2s ease;
   -webkit-transition: color 0.1s ease;
   transition: color 0.1s ease;
   color: #a1a1a1;
@@ -3142,8 +3158,9 @@ img.rsImg {
   font-size: 0.75rem;
   line-height: 1.9166666667em;
   text-decoration: none;
-  -webkit-transition: all 0.1s ease;
-  transition: all 0.1s ease;
+  -moz-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
   text-transform: uppercase;
   color: #fff;
 }
@@ -3843,9 +3860,9 @@ a .aligncenter {
   float: left;
   padding: 0.375rem 28px;
   text-decoration: none;
-  -webkit-transition: background 0.1s ease;
-  -moz-transition: background 0.1s ease;
-  transition: opacity 0.1s ease;
+  -webkit-transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
   background: #981b27;
   color: #fff;
 }
@@ -3941,8 +3958,8 @@ a .aligncenter {
   border: none;
   font-size: 16px;
   text-align: center;
-  -webkit-transition: background 0.2s ease;
-  -moz-transition: background 0.2s ease;
+  -webkit-transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
   background: #981b27;
   cursor: pointer;

@@ -9,15 +9,27 @@
  */
 ?>
 
-<footer class="c-footer">
+<?php if ( get_field( 'x5_general_social_btns', 'option' ) ||
+					 get_field( 'x5_footer_copyright', 'option' ) ): ?>
 	
-	<div class="o-container">
+	<footer class="footer">
+	
+		<div class="container">
+			
+			<?php get_template_part( 'partials/social', 'buttons' ); ?>
+			
+			<?php if ( get_field( 'x5_footer_copyright', 'option' ) ): ?>
+				<p class="copyright"><?php echo esc_html( get_field( 'x5_footer_copyright', 'option' ) ); ?></p>
+			<?php endif; ?>
 		
-	</div>
-	<!-- / o-container -->
-	
-</footer>
-<!-- / c-footer -->
+		</div>
+		<!-- / container -->
+		
+	</footer>
+	<!-- / footer -->
+
+<?php endif; ?>
+
 
 <?php
 	// do not remove

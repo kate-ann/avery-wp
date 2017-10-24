@@ -61,6 +61,7 @@
 			  $('#testimonials').royalSlider({
 			    keyboardNavEnabled: true,
 			    autoScaleSlider: true,
+			    autoHeight: true,
 			    controlNavigation: 'bullets',
 			    navigateByClick: true,
 			    startSlideId: 0,
